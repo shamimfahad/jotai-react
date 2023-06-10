@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
 import { genUniqueId } from '../utils';
-import { useSetAddTodo } from '../store/todoBoard';
+
+import { useTodosMolecule } from '../store/todos';
 
 const AddTodo: React.FC = () => {
+  const { useSetAddTodo } = useTodosMolecule();
   const addTodo = useSetAddTodo();
 
   const [inputValue, setInputValue] = useState('');

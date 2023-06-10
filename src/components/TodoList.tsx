@@ -1,11 +1,9 @@
-import {
-  Todo,
-  useSetRemoveTodo,
-  useSetToggleTodo,
-  useTodosValue,
-} from '../store/todoBoard';
+import { useTodosMolecule, Todo } from '../store/todos';
 
 const TodoList: React.FC = () => {
+  const { useTodosValue, useSetToggleTodo, useSetRemoveTodo } =
+    useTodosMolecule();
+
   const todos: Todo[] = useTodosValue();
   const toggleTodo: (id: string) => void = useSetToggleTodo();
   const deleteTodo: (id: string) => void = useSetRemoveTodo();
